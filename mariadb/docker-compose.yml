@@ -7,9 +7,12 @@ services:
     ports:
       - $DB_PORT
     environment:
+      MARIADB_ROOT_HOST: $DB_HOST
+      MARIADB_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
       MYSQL_DATABASE: $DB_NAME
-      MYSQL_ROOT_USER: $DB_USER
-      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
     networks:
       - db-network
 networks:
