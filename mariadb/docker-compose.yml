@@ -1,0 +1,18 @@
+services:
+  db:
+    image: "mariadb"
+    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - $DB_PORT
+    environment:
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_ROOT_USER: $DB_USER
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+    networks:
+      - db-network
+networks:
+  db-network:
+    name: db-network
+    driver: bridge
