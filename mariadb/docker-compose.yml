@@ -5,17 +5,10 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     ports:
-      - $DB_PORT
+      - 3306:3306
     environment:
-      MARIADB_ROOT_HOST: $DB_HOST
       MARIADB_ROOT_PASSWORD: $DB_ROOT_PASSWORD
       MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
       MYSQL_DATABASE: $DB_NAME
       MYSQL_USER: $DB_USER
       MYSQL_PASSWORD: $DB_PASSWORD
-    networks:
-      - db-network
-networks:
-  db-network:
-    name: db-network
-    driver: bridge

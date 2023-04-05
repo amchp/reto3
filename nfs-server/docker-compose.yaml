@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nfs-server:
+    image: erichough/nfs-server
+    restart: always
+    volumes:
+      - /path/to/exports:/exports
+    environment:
+      NFS_EXPORT_1: /exports *(rw,sync,no_subtree_check,no_root_squash)

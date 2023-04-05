@@ -1,12 +1,13 @@
 version: '3'
 
 services:
-  lb:
+  apache_lb:
     image: httpd:2.4
+    restart: unless-stopped
     ports:
-      - "80:80"
       - "443:443"
     volumes:
-      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
-      - ./ssl:/usr/local/apache2/ssl:ro
-
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./httpd-ssl.conf:/usr/local/apache2/conf/extra/httpd-ssl.conf
+      - ./fullchain.pem:/usr/local/apache2/conf/fullchain.pem
+      - ./privkey.pem:/usr/local/apache2/conf/privkey.pem
