@@ -5,3 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
+    volumes:
+      - ./nfs/modules/:/var/www/html/modules
+      - ./nfs/profiles/:/var/www/html/profiles
+      - ./nfs/sites/:/var/www/html/sites
+      - ./nfs/themes/:/var/www/html/themes
