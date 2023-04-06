@@ -1,6 +1,8 @@
 # Reto 3
 
-En este reto teniamos que desplegar dos instancias de drupal que fueran proveidas por un balanceador de carga Apache y que usen una base de datos MariaDB y servidor de archivos NFS.
+En este reto teniamos que desplegar dos instancias de drupal que fueran proveidas por un balanceador de carga Apache y que usen una base de datos MariaDB y servidor de archivos NFS. También, debe estar el balanceador de carga debe estar connectado a un dominio y usar https para communicarse.
+
+<img width="497" alt="Screen Shot 2023-04-06 at 11 22 28 AM" src="https://user-images.githubusercontent.com/28406146/230438896-e1d4a610-f476-43e7-9b3a-2dc982a74268.png">
 
 ## Crear EC2
 
