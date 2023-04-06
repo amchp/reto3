@@ -16,11 +16,16 @@ chmod 755 exports/sites/default/default.settings.php
 
 ## Poner kernel NFS
 
-Cada vez que inicie la maquina tienes que correr este commando para que en el kernel inicie nfs
+Correr estos commandos:
 
 ```
 sudo modprobe nfs
 sudo modprobe nfsd
+```
+Además agregar estas dos lineas /etc/modules:
+```
+nfs
+nfsd
 ```
 
 ## Correr Servidor NFS
